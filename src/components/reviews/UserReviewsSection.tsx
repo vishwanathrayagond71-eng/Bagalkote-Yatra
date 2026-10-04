@@ -220,7 +220,9 @@ export const UserReviewsSection: React.FC = () => {
                       <div className="flex items-center space-x-1.5">
                         <span className="font-bold text-sm text-white">{rev.author}</span>
                         {rev.verified && (
-                          <CheckCircle2 className="w-3.5 h-3.5 text-emerald-400" title="Verified Visitor" />
+                          <span title="Verified Visitor">
+                            <CheckCircle2 className="w-3.5 h-3.5 text-emerald-400" />
+                          </span>
                         )}
                       </div>
                       <span className="text-[11px] text-stone-400 block">{rev.location}</span>
