@@ -1,0 +1,136 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;800;900&family=Noto+Sans+Devanagari:wght@400;500;600;700&family=Noto+Sans+Kannada:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 35 25% 98%;
+    --foreground: 20 14% 12%;
+    --card: 0 0% 100%;
+    --card-foreground: 20 14% 12%;
+    --primary: 24 74% 53%;
+    --primary-foreground: 0 0% 100%;
+    --accent: 43 64% 52%;
+    --border: 30 20% 90%;
+  }
+
+  .dark {
+    --background: 20 14% 6%;
+    --foreground: 35 25% 94%;
+    --card: 20 12% 10%;
+    --card-foreground: 35 25% 94%;
+    --primary: 24 74% 53%;
+    --primary-foreground: 0 0% 100%;
+    --accent: 43 64% 52%;
+    --border: 20 10% 18%;
+  }
+
+  body {
+    background-color: #faf6f0;
+    color: #261f1b;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    overflow-x: hidden;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+
+  .dark body {
+    background-color: #0d0a08;
+    color: #f5ede6;
+  }
+}
+
+/* Custom Sandstone Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #14100d;
+}
+
+.light ::-webkit-scrollbar-track, html:not(.dark) ::-webkit-scrollbar-track {
+  background: #f0e9df;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #a64317;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #d97736;
+}
+
+/* Glassmorphism helpers - Dark Mode Default */
+.glass-panel {
+  background: rgba(22, 17, 14, 0.75);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(217, 119, 54, 0.15);
+}
+
+.light .glass-panel, html:not(.dark) .glass-panel {
+  background: rgba(255, 255, 255, 0.90);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(200, 90, 34, 0.25);
+  box-shadow: 0 4px 20px -2px rgba(100, 50, 20, 0.06);
+}
+
+.glass-card {
+  background: linear-gradient(135deg, rgba(32, 23, 19, 0.8) 0%, rgba(20, 15, 12, 0.9) 100%);
+  border: 1px solid rgba(212, 175, 55, 0.18);
+  box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5);
+}
+
+.light .glass-card, html:not(.dark) .glass-card {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.98) 0%, rgba(250, 243, 235, 0.95) 100%);
+  border: 1px solid rgba(200, 90, 34, 0.22);
+  box-shadow: 0 10px 30px -10px rgba(100, 50, 20, 0.08);
+}
+
+/* Light Theme Overrides for Sections and Common Utilities */
+.light section.bg-\[\#0a0807\], html:not(.dark) section.bg-\[\#0a0807\],
+.light section.bg-\[\#0d0a08\], html:not(.dark) section.bg-\[\#0d0a08\],
+.light section.bg-\[\#0f0c0a\], html:not(.dark) section.bg-\[\#0f0c0a\],
+.light section.bg-\[\#120e0c\], html:not(.dark) section.bg-\[\#120e0c\],
+.light .bg-stone-950, html:not(.dark) .bg-stone-950 {
+  background-color: #faf6f0 !important;
+}
+
+.light footer, html:not(.dark) footer {
+  background: linear-gradient(to bottom, #f5ede2, #eee3d5) !important;
+  color: #3b3530 !important;
+  border-top-color: rgba(200, 90, 34, 0.2) !important;
+}
+
+.light h1.text-white, html:not(.dark) h1.text-white,
+.light h2.text-white, html:not(.dark) h2.text-white,
+.light h3.text-white, html:not(.dark) h3.text-white {
+  color: #1c1917 !important;
+}
+
+.light .text-stone-300, html:not(.dark) .text-stone-300,
+.light .text-stone-400, html:not(.dark) .text-stone-400 {
+  color: #57534e !important;
+}
+
+.light .border-stone-800, html:not(.dark) .border-stone-800 {
+  border-color: #e5ded6 !important;
+}
+
+/* Shimmer gold line */
+.gold-gradient-text {
+  background: linear-gradient(135deg, #f6e08b 0%, #d4af37 50%, #e79b6c 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.sandstone-gradient-text {
+  background: linear-gradient(135deg, #f1be9e 0%, #d97736 50%, #c85a22 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
